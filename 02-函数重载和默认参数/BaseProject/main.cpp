@@ -49,7 +49,46 @@ void display(double a) {
 }
 
 
+//5.默认参数
+/*
+C++允许函数设置默认参数，在调用时可以根据情况省略实参，规则如下：
+ 
+什么情况下用默认参数？
+如果函数的实参经常是同一个值
+*/
+int testFunc(int v1 = 5, int v2 = 6) {
+    return v1 + v2;
+}
+
+int testFunc1(int v1, int v2 = 6) {
+    return v1 + v2;
+}
+
+// 声明
+int testFunc2(int v1 = 5, int v2 = 6);
 // 程序的入口，不能乱写
+
+int age = 20;
+int testFunc2_1(int v1 = 5, int v2 = age);
+
+
+void test(int a) {
+    cout << "test(int)" << a << endl;
+}
+
+void anotherFunc(int v1, void(*t)(int)) {
+    t(v1);
+}
+
+void anotherFunc_1(int v1, void(*t)(int) = test) {
+    t(v1);
+}
+
+
+//6.函数重载和默认参数可能会产生冲突、二义性（建议优先选择使用默认参数）
+/*
+ 
+ */
 int main() {
     
     /*
@@ -57,11 +96,33 @@ int main() {
     display(10L);
     display(10.0);
     */
-    display(10L);
-    display(10.0);
+    
+    cout << testFunc() << endl;       //11
+    cout << testFunc(10) << endl;     //16
+    cout << testFunc(10,20) << endl;  //30
+    
+    testFunc2();
+    
+    //p指针所指向的函数没有返回值，但是有参数
+    void(*p)(int) = test;
+    p(10);
+    
+    // 将10传给v1，将test传给指针t
+    anotherFunc(15, test);
+    anotherFunc_1(15);
+    anotherFunc_1(15, test);
     return 0;
 }
 
+
+// 实现
+int testFunc2(int v1, int v2) {
+    return v1 + v2;
+}
+
+int testFunc2_1(int v1, int v2) {
+    return v1 + v2;
+}
 
 /* C语言不支持函数重载，但是C++支持
  C++采用了name mangling 或者 name decoration 技术，对函数名进行改编、修饰
