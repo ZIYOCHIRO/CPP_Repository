@@ -64,6 +64,12 @@ int testFunc1(int v1, int v2 = 6) {
     return v1 + v2;
 }
 
+
+int testFunc1_1(int v1, int v2 = 6, int v3 = 7) {
+    return v1 + v2 + v3;
+}
+
+
 // 声明
 int testFunc2(int v1 = 5, int v2 = 6);
 // 程序的入口，不能乱写
@@ -101,13 +107,14 @@ int main() {
     cout << testFunc(10) << endl;     //16
     cout << testFunc(10,20) << endl;  //30
     
+    
     testFunc2();
     
     //p指针所指向的函数没有返回值，但是有参数
     void(*p)(int) = test;
     p(10);
     
-    // 将10传给v1，将test传给指针t
+    // 将15传给v1，将test传给指针t
     anotherFunc(15, test);
     anotherFunc_1(15);
     anotherFunc_1(15, test);
@@ -123,23 +130,6 @@ int testFunc2(int v1, int v2) {
 int testFunc2_1(int v1, int v2) {
     return v1 + v2;
 }
-
-/* C语言不支持函数重载，但是C++支持
- C++采用了name mangling 或者 name decoration 技术，对函数名进行改编、修饰
- 重载时会生成多个不同的函数名，不同编译器（MSVC、g++）有不同的生成规则
-改编后：display_int
-void display(int a) {
-    cout << "display(int a)" << endl;
-}
- 改编后：display_long
- void display(long a) {
-     cout << "display(long a)" << endl;
- }
- 改编后：display_double
- void display(double a) {
-     cout << "display(double a)" << endl;
- }
-*/
 
 
 /*
