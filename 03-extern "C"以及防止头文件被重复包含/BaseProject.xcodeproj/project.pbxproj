@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E459B8FB25ED0E7300EA735F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E459B8FA25ED0E7300EA735F /* main.cpp */; };
+		E4F55ECA263BBB5A007D2DC1 /* math.c in Sources */ = {isa = PBXBuildFile; fileRef = E4F55EC9263BBB5A007D2DC1 /* math.c */; };
+		E4F55ECD263BEB3C007D2DC1 /* other.c in Sources */ = {isa = PBXBuildFile; fileRef = E4F55ECC263BEB3C007D2DC1 /* other.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +28,9 @@
 		E459B8F725ED0E7300EA735F /* BaseProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaseProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		E459B8FA25ED0E7300EA735F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E49323C425EDE43C00F720DC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E4F55EC9263BBB5A007D2DC1 /* math.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = math.c; sourceTree = "<group>"; };
+		E4F55ECB263BE528007D2DC1 /* math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
+		E4F55ECC263BEB3C007D2DC1 /* other.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = other.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				E459B8FA25ED0E7300EA735F /* main.cpp */,
+				E4F55ECB263BE528007D2DC1 /* math.h */,
+				E4F55EC9263BBB5A007D2DC1 /* math.c */,
+				E4F55ECC263BEB3C007D2DC1 /* other.c */,
 			);
 			path = BaseProject;
 			sourceTree = "<group>";
@@ -120,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F55ECD263BEB3C007D2DC1 /* other.c in Sources */,
 				E459B8FB25ED0E7300EA735F /* main.cpp in Sources */,
+				E4F55ECA263BBB5A007D2DC1 /* math.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
