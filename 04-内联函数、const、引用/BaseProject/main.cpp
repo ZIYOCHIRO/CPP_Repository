@@ -15,7 +15,7 @@ inline void func() {
 }
 // 回收栈空间
 
-int sum(int v1, int v2) {
+inline int sum(int v1, int v2) {
     return v1 + v2;
 }
 
@@ -24,8 +24,8 @@ inline void run() {
 }
 
 #define add(v1, v2) v1 + v2
-#define add_v(v) v + v
-inline int addd(int v) {
+#define add_1(v) v + v
+inline int add_2(int v) {
     return v + v;
 }
 
@@ -48,18 +48,18 @@ int main() {
     cout << d << endl;
     
     int a = 10;
-    add_v(++a); // (++a) + (++a) = 24
-    addd(++a);  // (11) + (11) = 22
-    /*
-    cout << "func()" << endl;
-    int c = 10 + 20;
-     */
+    int b = 10;
+    // (++a) + (++a) = 23
+    cout << add_1(++a) << endl;
+    // (11) + (11) = 22
+    cout << add_2(++b) << endl;
+
+
     
     
     const int number = 10; // 常量
     Date date = {2011, 2, 4};
     Date date2 = {2017, 12, 4};
-    //date.year = 2015;
     
     //加上const，不能通过指针修改结构体
     //const Date *p = &date;
@@ -74,17 +74,12 @@ int main() {
     int * const p3 = &age;
     const int * const p4 = &age;
     int const * const p5 = &age;
+    
+
     return 0;
 }
 
-/*
- 什么时候使用内联函数？
- 1.函数代码体积不大
- 2.频繁调用的函数
- 避免频繁开辟栈空间/回收栈空间
- */
 
-// inline 在debug模式下没有作用
 
 /*
  int a = 1;
