@@ -58,6 +58,7 @@ int main() {
     cout << sum(10,20) << endl;
     cout << sub(30,20) << endl;
     other();
+    
     return 0;
 }
 
